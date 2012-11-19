@@ -1,0 +1,485 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		861DC4551655D59300CC1F29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4541655D59300CC1F29 /* UIKit.framework */; };
+		861DC4571655D59300CC1F29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4561655D59300CC1F29 /* Foundation.framework */; };
+		861DC4591655D59300CC1F29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4581655D59300CC1F29 /* CoreGraphics.framework */; };
+		861DC45F1655D59300CC1F29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 861DC45D1655D59300CC1F29 /* InfoPlist.strings */; };
+		861DC4611655D59300CC1F29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 861DC4601655D59300CC1F29 /* main.m */; };
+		861DC4651655D59300CC1F29 /* RNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 861DC4641655D59300CC1F29 /* RNAppDelegate.m */; };
+		861DC4671655D59300CC1F29 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 861DC4661655D59300CC1F29 /* Default.png */; };
+		861DC4691655D59300CC1F29 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861DC4681655D59300CC1F29 /* Default@2x.png */; };
+		861DC46B1655D59300CC1F29 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861DC46A1655D59300CC1F29 /* Default-568h@2x.png */; };
+		861DC46E1655D59300CC1F29 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861DC46C1655D59300CC1F29 /* MainStoryboard.storyboard */; };
+		861DC4711655D59300CC1F29 /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 861DC4701655D59300CC1F29 /* RNViewController.m */; };
+		861DC4791655D59300CC1F29 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4781655D59300CC1F29 /* SenTestingKit.framework */; };
+		861DC47A1655D59300CC1F29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4541655D59300CC1F29 /* UIKit.framework */; };
+		861DC47B1655D59300CC1F29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4561655D59300CC1F29 /* Foundation.framework */; };
+		861DC4831655D59300CC1F29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 861DC4811655D59300CC1F29 /* InfoPlist.strings */; };
+		861DC4861655D59300CC1F29 /* RNTextStatisticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 861DC4851655D59300CC1F29 /* RNTextStatisticsTests.m */; };
+		861DC4941655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 861DC4931655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m */; };
+		86B820311657007D00923060 /* NSString+RegexReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B820301657007D00923060 /* NSString+RegexReplace.m */; };
+		86D542F41659B2AF00075925 /* NSString+RNTextStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D542F31659B2AF00075925 /* NSString+RNTextStatistics.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		861DC47C1655D59300CC1F29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 861DC4471655D59300CC1F29 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 861DC44F1655D59300CC1F29;
+			remoteInfo = RNTextStatistics;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		861DC4501655D59300CC1F29 /* RNTextStatistics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNTextStatistics.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		861DC4541655D59300CC1F29 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		861DC4561655D59300CC1F29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		861DC4581655D59300CC1F29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		861DC45C1655D59300CC1F29 /* RNTextStatistics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RNTextStatistics-Info.plist"; sourceTree = "<group>"; };
+		861DC45E1655D59300CC1F29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		861DC4601655D59300CC1F29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		861DC4621655D59300CC1F29 /* RNTextStatistics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNTextStatistics-Prefix.pch"; sourceTree = "<group>"; };
+		861DC4631655D59300CC1F29 /* RNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNAppDelegate.h; sourceTree = "<group>"; };
+		861DC4641655D59300CC1F29 /* RNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNAppDelegate.m; sourceTree = "<group>"; };
+		861DC4661655D59300CC1F29 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		861DC4681655D59300CC1F29 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		861DC46A1655D59300CC1F29 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		861DC46D1655D59300CC1F29 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		861DC46F1655D59300CC1F29 /* RNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNViewController.h; sourceTree = "<group>"; };
+		861DC4701655D59300CC1F29 /* RNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNViewController.m; sourceTree = "<group>"; };
+		861DC4771655D59300CC1F29 /* RNTextStatisticsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNTextStatisticsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		861DC4781655D59300CC1F29 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		861DC4801655D59300CC1F29 /* RNTextStatisticsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RNTextStatisticsTests-Info.plist"; sourceTree = "<group>"; };
+		861DC4821655D59300CC1F29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		861DC4841655D59300CC1F29 /* RNTextStatisticsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNTextStatisticsTests.h; sourceTree = "<group>"; };
+		861DC4851655D59300CC1F29 /* RNTextStatisticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNTextStatisticsTests.m; sourceTree = "<group>"; };
+		861DC4921655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSRegularExpression+SimpleRegex.h"; path = "RNTextStatistics/NSRegularExpression+SimpleRegex.h"; sourceTree = "<group>"; };
+		861DC4931655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSRegularExpression+SimpleRegex.m"; path = "RNTextStatistics/NSRegularExpression+SimpleRegex.m"; sourceTree = "<group>"; };
+		86B8202F1657007D00923060 /* NSString+RegexReplace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RegexReplace.h"; path = "RNTextStatistics/NSString+RegexReplace.h"; sourceTree = "<group>"; };
+		86B820301657007D00923060 /* NSString+RegexReplace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RegexReplace.m"; path = "RNTextStatistics/NSString+RegexReplace.m"; sourceTree = "<group>"; };
+		86D542F21659B2AF00075925 /* NSString+RNTextStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RNTextStatistics.h"; path = "RNTextStatistics/NSString+RNTextStatistics.h"; sourceTree = "<group>"; };
+		86D542F31659B2AF00075925 /* NSString+RNTextStatistics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RNTextStatistics.m"; path = "RNTextStatistics/NSString+RNTextStatistics.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		861DC44D1655D59300CC1F29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				861DC4551655D59300CC1F29 /* UIKit.framework in Frameworks */,
+				861DC4571655D59300CC1F29 /* Foundation.framework in Frameworks */,
+				861DC4591655D59300CC1F29 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		861DC4731655D59300CC1F29 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				861DC4791655D59300CC1F29 /* SenTestingKit.framework in Frameworks */,
+				861DC47A1655D59300CC1F29 /* UIKit.framework in Frameworks */,
+				861DC47B1655D59300CC1F29 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		861DC4451655D59300CC1F29 = {
+			isa = PBXGroup;
+			children = (
+				861DC4531655D59300CC1F29 /* Frameworks */,
+				861DC4921655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.h */,
+				861DC4931655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m */,
+				86B8202F1657007D00923060 /* NSString+RegexReplace.h */,
+				86B820301657007D00923060 /* NSString+RegexReplace.m */,
+				86D542F21659B2AF00075925 /* NSString+RNTextStatistics.h */,
+				86D542F31659B2AF00075925 /* NSString+RNTextStatistics.m */,
+				861DC4511655D59300CC1F29 /* Products */,
+				861DC45A1655D59300CC1F29 /* RNTextStatistics */,
+				861DC47E1655D59300CC1F29 /* RNTextStatisticsTests */,
+			);
+			sourceTree = "<group>";
+		};
+		861DC4511655D59300CC1F29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				861DC4501655D59300CC1F29 /* RNTextStatistics.app */,
+				861DC4771655D59300CC1F29 /* RNTextStatisticsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		861DC4531655D59300CC1F29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				861DC4541655D59300CC1F29 /* UIKit.framework */,
+				861DC4561655D59300CC1F29 /* Foundation.framework */,
+				861DC4581655D59300CC1F29 /* CoreGraphics.framework */,
+				861DC4781655D59300CC1F29 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		861DC45A1655D59300CC1F29 /* RNTextStatistics */ = {
+			isa = PBXGroup;
+			children = (
+				861DC46C1655D59300CC1F29 /* MainStoryboard.storyboard */,
+				861DC4631655D59300CC1F29 /* RNAppDelegate.h */,
+				861DC4641655D59300CC1F29 /* RNAppDelegate.m */,
+				861DC46F1655D59300CC1F29 /* RNViewController.h */,
+				861DC4701655D59300CC1F29 /* RNViewController.m */,
+				861DC45B1655D59300CC1F29 /* Supporting Files */,
+			);
+			path = RNTextStatistics;
+			sourceTree = "<group>";
+		};
+		861DC45B1655D59300CC1F29 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				861DC45C1655D59300CC1F29 /* RNTextStatistics-Info.plist */,
+				861DC45D1655D59300CC1F29 /* InfoPlist.strings */,
+				861DC4601655D59300CC1F29 /* main.m */,
+				861DC4621655D59300CC1F29 /* RNTextStatistics-Prefix.pch */,
+				861DC4661655D59300CC1F29 /* Default.png */,
+				861DC4681655D59300CC1F29 /* Default@2x.png */,
+				861DC46A1655D59300CC1F29 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		861DC47E1655D59300CC1F29 /* RNTextStatisticsTests */ = {
+			isa = PBXGroup;
+			children = (
+				861DC4841655D59300CC1F29 /* RNTextStatisticsTests.h */,
+				861DC4851655D59300CC1F29 /* RNTextStatisticsTests.m */,
+				861DC47F1655D59300CC1F29 /* Supporting Files */,
+			);
+			path = RNTextStatisticsTests;
+			sourceTree = "<group>";
+		};
+		861DC47F1655D59300CC1F29 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				861DC4801655D59300CC1F29 /* RNTextStatisticsTests-Info.plist */,
+				861DC4811655D59300CC1F29 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		861DC44F1655D59300CC1F29 /* RNTextStatistics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 861DC4891655D59300CC1F29 /* Build configuration list for PBXNativeTarget "RNTextStatistics" */;
+			buildPhases = (
+				861DC44C1655D59300CC1F29 /* Sources */,
+				861DC44D1655D59300CC1F29 /* Frameworks */,
+				861DC44E1655D59300CC1F29 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RNTextStatistics;
+			productName = RNTextStatistics;
+			productReference = 861DC4501655D59300CC1F29 /* RNTextStatistics.app */;
+			productType = "com.apple.product-type.application";
+		};
+		861DC4761655D59300CC1F29 /* RNTextStatisticsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 861DC48C1655D59300CC1F29 /* Build configuration list for PBXNativeTarget "RNTextStatisticsTests" */;
+			buildPhases = (
+				861DC4721655D59300CC1F29 /* Sources */,
+				861DC4731655D59300CC1F29 /* Frameworks */,
+				861DC4741655D59300CC1F29 /* Resources */,
+				861DC4751655D59300CC1F29 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				861DC47D1655D59300CC1F29 /* PBXTargetDependency */,
+			);
+			name = RNTextStatisticsTests;
+			productName = RNTextStatisticsTests;
+			productReference = 861DC4771655D59300CC1F29 /* RNTextStatisticsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		861DC4471655D59300CC1F29 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RN;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Ryan Nystrom";
+			};
+			buildConfigurationList = 861DC44A1655D59300CC1F29 /* Build configuration list for PBXProject "RNTextStatistics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 861DC4451655D59300CC1F29;
+			productRefGroup = 861DC4511655D59300CC1F29 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				861DC44F1655D59300CC1F29 /* RNTextStatistics */,
+				861DC4761655D59300CC1F29 /* RNTextStatisticsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		861DC44E1655D59300CC1F29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				861DC45F1655D59300CC1F29 /* InfoPlist.strings in Resources */,
+				861DC4671655D59300CC1F29 /* Default.png in Resources */,
+				861DC4691655D59300CC1F29 /* Default@2x.png in Resources */,
+				861DC46B1655D59300CC1F29 /* Default-568h@2x.png in Resources */,
+				861DC46E1655D59300CC1F29 /* MainStoryboard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		861DC4741655D59300CC1F29 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				861DC4831655D59300CC1F29 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		861DC4751655D59300CC1F29 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		861DC44C1655D59300CC1F29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				861DC4611655D59300CC1F29 /* main.m in Sources */,
+				861DC4651655D59300CC1F29 /* RNAppDelegate.m in Sources */,
+				861DC4711655D59300CC1F29 /* RNViewController.m in Sources */,
+				861DC4941655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m in Sources */,
+				86B820311657007D00923060 /* NSString+RegexReplace.m in Sources */,
+				86D542F41659B2AF00075925 /* NSString+RNTextStatistics.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		861DC4721655D59300CC1F29 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				861DC4861655D59300CC1F29 /* RNTextStatisticsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		861DC47D1655D59300CC1F29 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 861DC44F1655D59300CC1F29 /* RNTextStatistics */;
+			targetProxy = 861DC47C1655D59300CC1F29 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		861DC45D1655D59300CC1F29 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				861DC45E1655D59300CC1F29 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		861DC46C1655D59300CC1F29 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				861DC46D1655D59300CC1F29 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
+		861DC4811655D59300CC1F29 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				861DC4821655D59300CC1F29 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		861DC4871655D59300CC1F29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		861DC4881655D59300CC1F29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		861DC48A1655D59300CC1F29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RNTextStatistics/RNTextStatistics-Prefix.pch";
+				INFOPLIST_FILE = "RNTextStatistics/RNTextStatistics-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		861DC48B1655D59300CC1F29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RNTextStatistics/RNTextStatistics-Prefix.pch";
+				INFOPLIST_FILE = "RNTextStatistics/RNTextStatistics-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		861DC48D1655D59300CC1F29 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RNTextStatistics.app/RNTextStatistics";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RNTextStatistics/RNTextStatistics-Prefix.pch";
+				INFOPLIST_FILE = "RNTextStatisticsTests/RNTextStatisticsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		861DC48E1655D59300CC1F29 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RNTextStatistics.app/RNTextStatistics";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RNTextStatistics/RNTextStatistics-Prefix.pch";
+				INFOPLIST_FILE = "RNTextStatisticsTests/RNTextStatisticsTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		861DC44A1655D59300CC1F29 /* Build configuration list for PBXProject "RNTextStatistics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				861DC4871655D59300CC1F29 /* Debug */,
+				861DC4881655D59300CC1F29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		861DC4891655D59300CC1F29 /* Build configuration list for PBXNativeTarget "RNTextStatistics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				861DC48A1655D59300CC1F29 /* Debug */,
+				861DC48B1655D59300CC1F29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		861DC48C1655D59300CC1F29 /* Build configuration list for PBXNativeTarget "RNTextStatisticsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				861DC48D1655D59300CC1F29 /* Debug */,
+				861DC48E1655D59300CC1F29 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 861DC4471655D59300CC1F29 /* Project object */;
+}
