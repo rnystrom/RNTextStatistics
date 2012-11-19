@@ -33,7 +33,7 @@ float fleschEase = [raw fleschKincaidReadingEase];  // 49.48
 
 Super simple.
 
-## [Documentation](http://rnystrom.github.com/RNTextStatistics/index.html)
+### [Documentation](http://rnystrom.github.com/RNTextStatistics/index.html)
 
 ## Contact
 
