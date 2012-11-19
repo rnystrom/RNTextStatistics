@@ -10,11 +10,21 @@
 
 @interface NSString (RNTextStatistics)
 
+- (float)fleschKincaidReadingEase;
+- (float)fleschKincaidGradeLevel;
+- (float)gunningFogScore;
+- (float)colemanLiauIndex;
+- (float)smogIndex;
+- (float)automatedReadabilityIndex;
 - (NSString*)cleanText;
 - (NSInteger)letterCount;
 - (NSInteger)wordCount;
 - (NSInteger)sentenceCount;
-- (CGFloat)averageWordsPerSentence;
+- (float)averageWordsPerSentence;
 - (NSInteger)syllableCount;
+- (NSInteger)wordsWithThreeSyllablesWithProperNouns:(BOOL)countProperNouns;
+- (float)percentageWordsWithThreeSyllablesWithProperNouns:(BOOL)countProperNouns;
+- (float)averageSyllablesPerWord;
+- (NSInteger)totalSyllables;
 
 @end

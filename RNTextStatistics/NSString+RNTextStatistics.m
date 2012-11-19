@@ -12,6 +12,40 @@
 
 @implementation NSString (RNTextStatistics)
 
+#pragma mark - Specific Tests
+
+- (float)fleschKincaidReadingEase {
+    NSString *cleanText = [self cleanText];
+    return 206.835f - 1.015f * [cleanText averageWordsPerSentence] - 84.6f * [cleanText averageSyllablesPerWord];
+}
+
+- (float)fleschKincaidGradeLevel {
+    NSString *cleanText = [self cleanText];
+    return 0.39f * [cleanText averageWordsPerSentence] + 11.8f * [cleanText averageSyllablesPerWord] - 15.59f;
+}
+
+- (float)gunningFogScore {
+    NSString *cleanText = [self cleanText];
+    return ([cleanText averageWordsPerSentence] + [cleanText percentageWordsWithThreeSyllablesWithProperNouns:NO]) * 0.4f;
+}
+
+- (float)colemanLiauIndex {
+    NSString *cleanText = [self cleanText];
+    return 5.89f * ([cleanText letterCount] / (float)[cleanText wordCount]) - 0.3f * ([cleanText sentenceCount] / (float)[cleanText wordCount]) - 15.8f;
+}
+
+- (float)smogIndex {
+    NSString *cleanText = [self cleanText];
+    return 1.043f * sqrtf([cleanText wordsWithThreeSyllablesWithProperNouns:YES] * (30.f / (float)[cleanText sentenceCount]) + 3.1291f);
+}
+
+- (float)automatedReadabilityIndex {
+    NSString *cleanText = [self cleanText];
+    return 4.71f * ([cleanText letterCount] / (float)[cleanText wordCount]) + 0.5f * ([cleanText wordCount] / (float)[cleanText sentenceCount]) - 21.43f;
+}
+
+#pragma mark - Formatting
+
 - (NSString*)cleanText {
     NSString *text = [self copy];
     // Strip tags
@@ -62,14 +96,61 @@
 }
 
 // No test required. sentenceCount and wordCount are already tested
-- (CGFloat)averageWordsPerSentence {
+- (float)averageWordsPerSentence {
     NSString *cleanText = [self cleanText];
     NSInteger sentenceCount = [cleanText sentenceCount];
     NSInteger wordCount = [cleanText wordCount];
-    return (CGFloat)wordCount / (CGFloat)sentenceCount;
+    return (float)wordCount / (float)sentenceCount;
 }
 
-#pragma mark - Syllables
+- (NSInteger)wordsWithThreeSyllablesWithProperNouns:(BOOL)countProperNouns {
+    NSString *cleanText = [self cleanText];
+    __block NSInteger longWordCount = 0;
+    NSArray *words = [cleanText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    [words enumerateObjectsUsingBlock:^(NSString *word, NSUInteger idx, BOOL *stop) {
+        if ([word syllableCount] > 2) {
+            if (countProperNouns) {
+                longWordCount++;
+            }
+            else {
+                // check for uppercase string (assuming proper noun)
+                NSString *firstLetter = [word substringToIndex:1];
+                if (! [firstLetter isEqualToString:[firstLetter uppercaseString]]) {
+                    longWordCount++;
+                }
+            }
+        }
+    }];
+    return longWordCount;
+}
+
+- (float)percentageWordsWithThreeSyllablesWithProperNouns:(BOOL)countProperNouns {
+    NSString *cleanText = [self cleanText];
+    NSInteger wordCount = [cleanText wordCount];
+    NSInteger longWordCount = [cleanText wordsWithThreeSyllablesWithProperNouns:countProperNouns];
+    return (float)longWordCount / (float)wordCount;
+}
+
+- (float)averageSyllablesPerWord {
+    NSString *cleanText = [self cleanText];
+    __block NSInteger syllableCount = 0;
+    NSInteger wordCount = [cleanText wordCount];
+    NSArray *words = [cleanText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    [words enumerateObjectsUsingBlock:^(NSString *word, NSUInteger idx, BOOL *stop) {
+        syllableCount += [word syllableCount];
+    }];
+    return (float)syllableCount / (float)wordCount;
+}
+
+- (NSInteger)totalSyllables {
+    NSString *cleanText = [self cleanText];
+    __block NSInteger syllableCount = 0;
+    NSArray *words = [cleanText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    [words enumerateObjectsUsingBlock:^(NSString *word, NSUInteger idx, BOOL *stop) {
+        syllableCount += [word syllableCount];
+    }];
+    return syllableCount;
+}
 
 - (NSInteger)syllableCount {
     // remove non-alpha chars

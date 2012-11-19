@@ -150,8 +150,8 @@
 		861DC47E1655D59300CC1F29 /* RNTextStatisticsTests */ = {
 			isa = PBXGroup;
 			children = (
-				861DC4851655D59300CC1F29 /* RNTextStatisticsTests.m */,
 				861DC4841655D59300CC1F29 /* RNTextStatisticsTests.h */,
+				861DC4851655D59300CC1F29 /* RNTextStatisticsTests.m */,
 				861DC47F1655D59300CC1F29 /* Supporting Files */,
 			);
 			path = RNTextStatisticsTests;
