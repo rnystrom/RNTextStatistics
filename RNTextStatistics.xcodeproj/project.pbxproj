@@ -10,20 +10,21 @@
 		861DC4551655D59300CC1F29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4541655D59300CC1F29 /* UIKit.framework */; };
 		861DC4571655D59300CC1F29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4561655D59300CC1F29 /* Foundation.framework */; };
 		861DC4591655D59300CC1F29 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4581655D59300CC1F29 /* CoreGraphics.framework */; };
-		861DC45F1655D59300CC1F29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 861DC45D1655D59300CC1F29 /* InfoPlist.strings */; };
-		861DC4611655D59300CC1F29 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 861DC4601655D59300CC1F29 /* main.m */; };
-		861DC4651655D59300CC1F29 /* RNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 861DC4641655D59300CC1F29 /* RNAppDelegate.m */; };
-		861DC4671655D59300CC1F29 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 861DC4661655D59300CC1F29 /* Default.png */; };
-		861DC4691655D59300CC1F29 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861DC4681655D59300CC1F29 /* Default@2x.png */; };
-		861DC46B1655D59300CC1F29 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 861DC46A1655D59300CC1F29 /* Default-568h@2x.png */; };
-		861DC46E1655D59300CC1F29 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 861DC46C1655D59300CC1F29 /* MainStoryboard.storyboard */; };
-		861DC4711655D59300CC1F29 /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 861DC4701655D59300CC1F29 /* RNViewController.m */; };
 		861DC4791655D59300CC1F29 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4781655D59300CC1F29 /* SenTestingKit.framework */; };
 		861DC47A1655D59300CC1F29 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4541655D59300CC1F29 /* UIKit.framework */; };
 		861DC47B1655D59300CC1F29 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 861DC4561655D59300CC1F29 /* Foundation.framework */; };
-		861DC4831655D59300CC1F29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 861DC4811655D59300CC1F29 /* InfoPlist.strings */; };
 		861DC4861655D59300CC1F29 /* RNTextStatisticsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 861DC4851655D59300CC1F29 /* RNTextStatisticsTests.m */; };
 		861DC4941655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m in Sources */ = {isa = PBXBuildFile; fileRef = 861DC4931655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m */; };
+		864A54AE165AC2D60046B0A8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 864A54A0165AC2D60046B0A8 /* Default-568h@2x.png */; };
+		864A54AF165AC2D60046B0A8 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 864A54A1165AC2D60046B0A8 /* Default.png */; };
+		864A54B0165AC2D60046B0A8 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 864A54A2165AC2D60046B0A8 /* Default@2x.png */; };
+		864A54B1165AC2D60046B0A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 864A54A3165AC2D60046B0A8 /* InfoPlist.strings */; };
+		864A54B2165AC2D60046B0A8 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 864A54A5165AC2D60046B0A8 /* MainStoryboard.storyboard */; };
+		864A54B3165AC2D60046B0A8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A54A7165AC2D60046B0A8 /* main.m */; };
+		864A54B4165AC2D60046B0A8 /* RNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A54A9165AC2D60046B0A8 /* RNAppDelegate.m */; };
+		864A54B5165AC2D60046B0A8 /* RNTextStatistics-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864A54AA165AC2D60046B0A8 /* RNTextStatistics-Info.plist */; };
+		864A54B6165AC2D60046B0A8 /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A54AD165AC2D60046B0A8 /* RNViewController.m */; };
+		864A54B8165AC3270046B0A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 861DC4811655D59300CC1F29 /* InfoPlist.strings */; };
 		86B820311657007D00923060 /* NSString+RegexReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B820301657007D00923060 /* NSString+RegexReplace.m */; };
 		86D542F41659B2AF00075925 /* NSString+RNTextStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D542F31659B2AF00075925 /* NSString+RNTextStatistics.m */; };
 /* End PBXBuildFile section */
@@ -43,18 +44,6 @@
 		861DC4541655D59300CC1F29 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		861DC4561655D59300CC1F29 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		861DC4581655D59300CC1F29 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		861DC45C1655D59300CC1F29 /* RNTextStatistics-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RNTextStatistics-Info.plist"; sourceTree = "<group>"; };
-		861DC45E1655D59300CC1F29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		861DC4601655D59300CC1F29 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		861DC4621655D59300CC1F29 /* RNTextStatistics-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNTextStatistics-Prefix.pch"; sourceTree = "<group>"; };
-		861DC4631655D59300CC1F29 /* RNAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNAppDelegate.h; sourceTree = "<group>"; };
-		861DC4641655D59300CC1F29 /* RNAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNAppDelegate.m; sourceTree = "<group>"; };
-		861DC4661655D59300CC1F29 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		861DC4681655D59300CC1F29 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		861DC46A1655D59300CC1F29 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		861DC46D1655D59300CC1F29 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		861DC46F1655D59300CC1F29 /* RNViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RNViewController.h; sourceTree = "<group>"; };
-		861DC4701655D59300CC1F29 /* RNViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNViewController.m; sourceTree = "<group>"; };
 		861DC4771655D59300CC1F29 /* RNTextStatisticsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNTextStatisticsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		861DC4781655D59300CC1F29 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		861DC4801655D59300CC1F29 /* RNTextStatisticsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RNTextStatisticsTests-Info.plist"; sourceTree = "<group>"; };
@@ -63,6 +52,18 @@
 		861DC4851655D59300CC1F29 /* RNTextStatisticsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNTextStatisticsTests.m; sourceTree = "<group>"; };
 		861DC4921655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSRegularExpression+SimpleRegex.h"; path = "RNTextStatistics/NSRegularExpression+SimpleRegex.h"; sourceTree = "<group>"; };
 		861DC4931655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSRegularExpression+SimpleRegex.m"; path = "RNTextStatistics/NSRegularExpression+SimpleRegex.m"; sourceTree = "<group>"; };
+		864A54A0165AC2D60046B0A8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../example/Default-568h@2x.png"; sourceTree = "<group>"; };
+		864A54A1165AC2D60046B0A8 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../example/Default.png; sourceTree = "<group>"; };
+		864A54A2165AC2D60046B0A8 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "../example/Default@2x.png"; sourceTree = "<group>"; };
+		864A54A4165AC2D60046B0A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		864A54A6165AC2D60046B0A8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		864A54A7165AC2D60046B0A8 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../example/main.m; sourceTree = "<group>"; };
+		864A54A8165AC2D60046B0A8 /* RNAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNAppDelegate.h; path = ../example/RNAppDelegate.h; sourceTree = "<group>"; };
+		864A54A9165AC2D60046B0A8 /* RNAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNAppDelegate.m; path = ../example/RNAppDelegate.m; sourceTree = "<group>"; };
+		864A54AA165AC2D60046B0A8 /* RNTextStatistics-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "RNTextStatistics-Info.plist"; path = "../example/RNTextStatistics-Info.plist"; sourceTree = "<group>"; };
+		864A54AB165AC2D60046B0A8 /* RNTextStatistics-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RNTextStatistics-Prefix.pch"; path = "../example/RNTextStatistics-Prefix.pch"; sourceTree = "<group>"; };
+		864A54AC165AC2D60046B0A8 /* RNViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RNViewController.h; path = ../example/RNViewController.h; sourceTree = "<group>"; };
+		864A54AD165AC2D60046B0A8 /* RNViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RNViewController.m; path = ../example/RNViewController.m; sourceTree = "<group>"; };
 		86B8202F1657007D00923060 /* NSString+RegexReplace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RegexReplace.h"; path = "RNTextStatistics/NSString+RegexReplace.h"; sourceTree = "<group>"; };
 		86B820301657007D00923060 /* NSString+RegexReplace.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+RegexReplace.m"; path = "RNTextStatistics/NSString+RegexReplace.m"; sourceTree = "<group>"; };
 		86D542F21659B2AF00075925 /* NSString+RNTextStatistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+RNTextStatistics.h"; path = "RNTextStatistics/NSString+RNTextStatistics.h"; sourceTree = "<group>"; };
@@ -96,15 +97,8 @@
 		861DC4451655D59300CC1F29 = {
 			isa = PBXGroup;
 			children = (
-				861DC4531655D59300CC1F29 /* Frameworks */,
-				861DC4921655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.h */,
-				861DC4931655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m */,
-				86B8202F1657007D00923060 /* NSString+RegexReplace.h */,
-				86B820301657007D00923060 /* NSString+RegexReplace.m */,
-				86D542F21659B2AF00075925 /* NSString+RNTextStatistics.h */,
-				86D542F31659B2AF00075925 /* NSString+RNTextStatistics.m */,
-				861DC4511655D59300CC1F29 /* Products */,
-				861DC45A1655D59300CC1F29 /* RNTextStatistics */,
+				861DC45A1655D59300CC1F29 /* example */,
+				864A549E165AC21D0046B0A8 /* RNTextStatistics */,
 				861DC47E1655D59300CC1F29 /* RNTextStatisticsTests */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +110,7 @@
 				861DC4771655D59300CC1F29 /* RNTextStatisticsTests.octest */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		861DC4531655D59300CC1F29 /* Frameworks */ = {
@@ -127,40 +122,36 @@
 				861DC4781655D59300CC1F29 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
+			path = ..;
 			sourceTree = "<group>";
 		};
-		861DC45A1655D59300CC1F29 /* RNTextStatistics */ = {
+		861DC45A1655D59300CC1F29 /* example */ = {
 			isa = PBXGroup;
 			children = (
-				861DC46C1655D59300CC1F29 /* MainStoryboard.storyboard */,
-				861DC4631655D59300CC1F29 /* RNAppDelegate.h */,
-				861DC4641655D59300CC1F29 /* RNAppDelegate.m */,
-				861DC46F1655D59300CC1F29 /* RNViewController.h */,
-				861DC4701655D59300CC1F29 /* RNViewController.m */,
-				861DC45B1655D59300CC1F29 /* Supporting Files */,
+				864A54A0165AC2D60046B0A8 /* Default-568h@2x.png */,
+				864A54A1165AC2D60046B0A8 /* Default.png */,
+				864A54A2165AC2D60046B0A8 /* Default@2x.png */,
+				864A54A3165AC2D60046B0A8 /* InfoPlist.strings */,
+				864A54A5165AC2D60046B0A8 /* MainStoryboard.storyboard */,
+				864A54A7165AC2D60046B0A8 /* main.m */,
+				864A54A8165AC2D60046B0A8 /* RNAppDelegate.h */,
+				864A54A9165AC2D60046B0A8 /* RNAppDelegate.m */,
+				864A54AA165AC2D60046B0A8 /* RNTextStatistics-Info.plist */,
+				864A54AB165AC2D60046B0A8 /* RNTextStatistics-Prefix.pch */,
+				864A54AC165AC2D60046B0A8 /* RNViewController.h */,
+				864A54AD165AC2D60046B0A8 /* RNViewController.m */,
+				861DC4531655D59300CC1F29 /* Frameworks */,
+				861DC4511655D59300CC1F29 /* Products */,
 			);
+			name = example;
 			path = RNTextStatistics;
-			sourceTree = "<group>";
-		};
-		861DC45B1655D59300CC1F29 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				861DC45C1655D59300CC1F29 /* RNTextStatistics-Info.plist */,
-				861DC45D1655D59300CC1F29 /* InfoPlist.strings */,
-				861DC4601655D59300CC1F29 /* main.m */,
-				861DC4621655D59300CC1F29 /* RNTextStatistics-Prefix.pch */,
-				861DC4661655D59300CC1F29 /* Default.png */,
-				861DC4681655D59300CC1F29 /* Default@2x.png */,
-				861DC46A1655D59300CC1F29 /* Default-568h@2x.png */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		861DC47E1655D59300CC1F29 /* RNTextStatisticsTests */ = {
 			isa = PBXGroup;
 			children = (
-				861DC4841655D59300CC1F29 /* RNTextStatisticsTests.h */,
 				861DC4851655D59300CC1F29 /* RNTextStatisticsTests.m */,
+				861DC4841655D59300CC1F29 /* RNTextStatisticsTests.h */,
 				861DC47F1655D59300CC1F29 /* Supporting Files */,
 			);
 			path = RNTextStatisticsTests;
@@ -173,6 +164,19 @@
 				861DC4811655D59300CC1F29 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		864A549E165AC21D0046B0A8 /* RNTextStatistics */ = {
+			isa = PBXGroup;
+			children = (
+				861DC4921655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.h */,
+				861DC4931655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m */,
+				86B8202F1657007D00923060 /* NSString+RegexReplace.h */,
+				86B820301657007D00923060 /* NSString+RegexReplace.m */,
+				86D542F21659B2AF00075925 /* NSString+RNTextStatistics.h */,
+				86D542F31659B2AF00075925 /* NSString+RNTextStatistics.m */,
+			);
+			name = RNTextStatistics;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,11 +251,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				861DC45F1655D59300CC1F29 /* InfoPlist.strings in Resources */,
-				861DC4671655D59300CC1F29 /* Default.png in Resources */,
-				861DC4691655D59300CC1F29 /* Default@2x.png in Resources */,
-				861DC46B1655D59300CC1F29 /* Default-568h@2x.png in Resources */,
-				861DC46E1655D59300CC1F29 /* MainStoryboard.storyboard in Resources */,
+				864A54AE165AC2D60046B0A8 /* Default-568h@2x.png in Resources */,
+				864A54AF165AC2D60046B0A8 /* Default.png in Resources */,
+				864A54B0165AC2D60046B0A8 /* Default@2x.png in Resources */,
+				864A54B1165AC2D60046B0A8 /* InfoPlist.strings in Resources */,
+				864A54B2165AC2D60046B0A8 /* MainStoryboard.storyboard in Resources */,
+				864A54B5165AC2D60046B0A8 /* RNTextStatistics-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,7 +264,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				861DC4831655D59300CC1F29 /* InfoPlist.strings in Resources */,
+				864A54B8165AC3270046B0A8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,12 +291,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				861DC4611655D59300CC1F29 /* main.m in Sources */,
-				861DC4651655D59300CC1F29 /* RNAppDelegate.m in Sources */,
-				861DC4711655D59300CC1F29 /* RNViewController.m in Sources */,
 				861DC4941655D8E200CC1F29 /* NSRegularExpression+SimpleRegex.m in Sources */,
 				86B820311657007D00923060 /* NSString+RegexReplace.m in Sources */,
 				86D542F41659B2AF00075925 /* NSString+RNTextStatistics.m in Sources */,
+				864A54B3165AC2D60046B0A8 /* main.m in Sources */,
+				864A54B4165AC2D60046B0A8 /* RNAppDelegate.m in Sources */,
+				864A54B6165AC2D60046B0A8 /* RNViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,28 +319,30 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		861DC45D1655D59300CC1F29 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				861DC45E1655D59300CC1F29 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		861DC46C1655D59300CC1F29 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				861DC46D1655D59300CC1F29 /* en */,
-			);
-			name = MainStoryboard.storyboard;
-			sourceTree = "<group>";
-		};
 		861DC4811655D59300CC1F29 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				861DC4821655D59300CC1F29 /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		864A54A3165AC2D60046B0A8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				864A54A4165AC2D60046B0A8 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = ../example;
+			sourceTree = "<group>";
+		};
+		864A54A5165AC2D60046B0A8 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				864A54A6165AC2D60046B0A8 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			path = ../example;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -397,8 +404,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RNTextStatistics/RNTextStatistics-Prefix.pch";
-				INFOPLIST_FILE = "RNTextStatistics/RNTextStatistics-Info.plist";
+				GCC_PREFIX_HEADER = "example/RNTextStatistics-Prefix.pch";
+				INFOPLIST_FILE = "example/RNTextStatistics-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -408,8 +415,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RNTextStatistics/RNTextStatistics-Prefix.pch";
-				INFOPLIST_FILE = "RNTextStatistics/RNTextStatistics-Info.plist";
+				GCC_PREFIX_HEADER = "example/RNTextStatistics-Prefix.pch";
+				INFOPLIST_FILE = "example/RNTextStatistics-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -418,6 +425,7 @@
 		861DC48D1655D59300CC1F29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RNTextStatistics.app/RNTextStatistics";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -425,9 +433,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RNTextStatistics/RNTextStatistics-Prefix.pch";
-				INFOPLIST_FILE = "RNTextStatisticsTests/RNTextStatisticsTests-Info.plist";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "example/RNTextStatisticsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
@@ -435,6 +445,7 @@
 		861DC48E1655D59300CC1F29 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RNTextStatistics.app/RNTextStatistics";
 				FRAMEWORK_SEARCH_PATHS = (
 					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
@@ -442,9 +453,11 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "RNTextStatistics/RNTextStatistics-Prefix.pch";
-				INFOPLIST_FILE = "RNTextStatisticsTests/RNTextStatisticsTests-Info.plist";
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "example/RNTextStatisticsTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
+				USER_HEADER_SEARCH_PATHS = "";
 				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
