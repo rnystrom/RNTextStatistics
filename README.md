@@ -28,7 +28,7 @@ All readability tests and statistics caluclations are available simple as Catego
 
 ``` objective-c
 NSString *raw = @"Quam Nullam Fermentum Cras Ornare";
-float fleschEase = [raw fleschKincaidReadingEase];
+float fleschEase = [raw fleschKincaidReadingEase];  // 49.48
 ```
 
 Super simple.
