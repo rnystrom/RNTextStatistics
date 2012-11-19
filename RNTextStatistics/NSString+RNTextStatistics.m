@@ -26,7 +26,7 @@
 
 - (float)gunningFogScore {
     NSString *cleanText = [self cleanText];
-    return ([cleanText averageWordsPerSentence] + [cleanText percentageWordsWithThreeSyllablesWithProperNouns:NO]) * 0.4f;
+    return ([cleanText averageWordsPerSentence] + [cleanText percentageWordsWithThreeSyllablesWithProperNouns:YES] * 100.f) * 0.4f;
 }
 
 - (float)colemanLiauIndex {
@@ -61,9 +61,9 @@
     // Replace new lines with spaces
     text = [[NSRegularExpression simpleRegex:@"[ ]*(\\n|\\r\\n|\\r)[ ]*"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@" "];
     // Check for duplicated terminators
-    text = [[NSRegularExpression simpleRegex:@"([\\.])[\\. ]+"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@"."];
+    text = [[NSRegularExpression simpleRegex:@"\\.[\\.]+"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@"."];
     // Pad sentence terminators
-    text = [[NSRegularExpression simpleRegex:@"[ ]*([\\.])"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@"."];
+    text = [[NSRegularExpression simpleRegex:@"[ ]*([\\.])\\s"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@". "];
     // Remove "words" comprised only of numbers
     text = [[NSRegularExpression simpleRegex:@"\\s[0-9]+\\s"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@" "];
     // Remove multiple spaces

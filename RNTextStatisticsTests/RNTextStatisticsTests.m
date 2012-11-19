@@ -9,13 +9,23 @@
 #import "RNTextStatisticsTests.h"
 #import "NSString+RNTextStatistics.h"
 
-@implementation RNTextStatisticsTests {
+static float kStddev = 0.03f;
 
+BOOL runTest(float result, float expected, float stddev) {
+    float minExpected = expected - expected * stddev;
+    float maxExpected = expected + expected * stddev;
+    return minExpected <= result && result <= maxExpected;
+}
+
+@implementation RNTextStatisticsTests {
+    NSString *_longParagraph;
 }
 
 - (void)setUp
 {
     [super setUp];
+    
+    _longParagraph = @"Europeans have long regarded kangaroos as strange animals. Early explorers described them as creatures that had heads like deer (without antlers), stood upright like men, and hopped like frogs. Combined with the two-headed appearance of a mother kangaroo, this led many back home to dismiss them as travelers' tales for quite some time. The first kangaroo to be exhibited in the western world was an example shot by John Gore, an officer on Captain Cook's Endeavor in 1770. The animal was shot and its skin and skull transported back to England whereupon it was stuffed (by taxidermists who had never seen the animal before) and displayed to the general public as a curiosity.\nKangaroos have large, powerful hind legs, large feet adapted for leaping, a long muscular tail for balance, and a small head. Like all marsupials, female kangaroos have a pouch called a marsupium in which joeys complete postnatal development.\nKangaroos are the only large animals to use hopping as a means of locomotion. The comfortable hopping speed for Red Kangaroo is about 13–16 mph... This fast and energy-efficient method of travel has evolved because of the need to regularly cover large distances in search of food and water, rather than the need to escape predators.";
 }
 
 - (void)tearDown
@@ -73,6 +83,42 @@
     for (NSString *string in twoSyllables) {
         STAssertTrue([string syllableCount] == 2, @"Double syllable word %@ incorrect",string);
     }
+}
+
+- (void)testFleschEase {
+    float result = [_longParagraph fleschKincaidReadingEase];
+    float expected = 58.3f;
+    STAssertTrue(runTest(result, expected, kStddev), @"Flesch Ease; Result: %.3f; Expected: %.3f",result, expected);
+}
+
+- (void)testFleschGrade {
+    float result = [_longParagraph fleschKincaidGradeLevel];
+    float expected = 10.3f;
+    STAssertTrue(runTest(result, expected, kStddev), @"Flesch Grade; Result: %.3f; Expected: %.3f",result, expected);
+}
+
+- (void)testGunningFog {
+    float result = [_longParagraph gunningFogScore];
+    float expected = 14.3f;
+    STAssertTrue(runTest(result, expected, kStddev), @"Gunning Fog; Result: %.3f; Expected: %.3f",result, expected);
+}
+
+- (void)testColeman {
+    float result = [_longParagraph colemanLiauIndex];
+    float expected = 12.8f;
+    STAssertTrue(runTest(result, expected, kStddev), @"Coleman; Result: %.3f; Expected: %.3f",result, expected);
+}
+
+- (void)testSMOG {
+    float result = [_longParagraph smogIndex];
+    float expected = 10.7f;
+    STAssertTrue(runTest(result, expected, kStddev), @"SMOG; Result: %.3f; Expected: %.3f",result, expected);
+}
+
+- (void)testARI {
+    float result = [_longParagraph automatedReadabilityIndex];
+    float expected = 11.8f;
+    STAssertTrue(runTest(result, expected, kStddev), @"ARI; Result: %.3f; Expected: %.3f",result, expected);
 }
 
 @end
