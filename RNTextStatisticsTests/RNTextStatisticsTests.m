@@ -115,7 +115,7 @@ BOOL runTest(float result, float expected, float stddev) {
 }
 
 - (void)testGunningFog {
-    float result = [_longParagraph gunningFogScore];
+    float result = [_longParagraph gunningFogIndex];
     float expected = 14.3f;
     STAssertTrue(runTest(result, expected, kStddev), @"Gunning Fog; Result: %.3f; Expected: %.3f",result, expected);
 }

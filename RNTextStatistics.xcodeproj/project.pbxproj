@@ -24,8 +24,8 @@
 		864A54B4165AC2D60046B0A8 /* RNAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A54A9165AC2D60046B0A8 /* RNAppDelegate.m */; };
 		864A54B5165AC2D60046B0A8 /* RNTextStatistics-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864A54AA165AC2D60046B0A8 /* RNTextStatistics-Info.plist */; };
 		864A54B6165AC2D60046B0A8 /* RNViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A54AD165AC2D60046B0A8 /* RNViewController.m */; };
-		864A54C1165AD3260046B0A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 864A54BF165AD3260046B0A8 /* InfoPlist.strings */; };
 		864A54C2165AD34D0046B0A8 /* RNTextStatisticsTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864A54BD165AD3210046B0A8 /* RNTextStatisticsTests-Info.plist */; };
+		864A54C7165ADFB60046B0A8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 864A54BF165AD3260046B0A8 /* InfoPlist.strings */; };
 		86B820311657007D00923060 /* NSString+RegexReplace.m in Sources */ = {isa = PBXBuildFile; fileRef = 86B820301657007D00923060 /* NSString+RegexReplace.m */; };
 		86D542F41659B2AF00075925 /* NSString+RNTextStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D542F31659B2AF00075925 /* NSString+RNTextStatistics.m */; };
 /* End PBXBuildFile section */
@@ -265,8 +265,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				864A54C1165AD3260046B0A8 /* InfoPlist.strings in Resources */,
 				864A54C2165AD34D0046B0A8 /* RNTextStatisticsTests-Info.plist in Resources */,
+				864A54C7165ADFB60046B0A8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

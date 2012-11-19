@@ -25,8 +25,16 @@
 
 #import <Foundation/Foundation.h>
 
+/** Quickly replace a regular expression match with another string. */
 @interface NSString (RegexReplace)
 
+/** Quickly replace a regular expression match with another string. 
+ 
+ @param pattern A regular expression pattern.
+ @param replace A string to replace all matches of the regular expression with.
+ @param options Options for the regular expression.
+ @see [NSRegularExpression](https://developer.apple.com/library/mac/#documentation/Foundation/Reference/NSRegularExpression_Class/Reference/Reference.html)
+ */
 - (NSString*)stringByReplacingRegularExpression:(NSString*)pattern withString:(NSString*)replace options:(NSRegularExpressionOptions)options;
 
 @end

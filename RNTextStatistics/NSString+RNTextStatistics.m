@@ -41,7 +41,7 @@
     return 0.39f * [cleanText averageWordsPerSentence] + 11.8f * [cleanText averageSyllablesPerWord] - 15.59f;
 }
 
-- (float)gunningFogScore {
+- (float)gunningFogIndex {
     NSString *cleanText = [self cleanText];
     return ([cleanText averageWordsPerSentence] + [cleanText percentageWordsWithThreeSyllablesWithProperNouns:YES] * 100.f) * 0.4f;
 }
@@ -159,7 +159,7 @@
     return (float)syllableCount / (float)wordCount;
 }
 
-- (NSInteger)totalSyllables {
+- (NSInteger)syllableTotal {
     NSString *cleanText = [self cleanText];
     __block NSInteger syllableCount = 0;
     NSArray *words = [cleanText componentsSeparatedByCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
