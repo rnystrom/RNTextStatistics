@@ -1,0 +1,1104 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>NSString(RNTextStatistics) Category Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">RNTextStatistics </a></h1>
+				<a id="developerHome" href="../index.html">Ryan Nystrom</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">NSString(RNTextStatistics) Category Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/automatedReadabilityIndex">&nbsp;&nbsp;&nbsp;&nbsp;- automatedReadabilityIndex</option>
+	
+	<option value="//api/name/averageSyllablesPerWord">&nbsp;&nbsp;&nbsp;&nbsp;- averageSyllablesPerWord</option>
+	
+	<option value="//api/name/averageWordsPerSentence">&nbsp;&nbsp;&nbsp;&nbsp;- averageWordsPerSentence</option>
+	
+	<option value="//api/name/cleanText">&nbsp;&nbsp;&nbsp;&nbsp;- cleanText</option>
+	
+	<option value="//api/name/colemanLiauIndex">&nbsp;&nbsp;&nbsp;&nbsp;- colemanLiauIndex</option>
+	
+	<option value="//api/name/fleschKincaidGradeLevel">&nbsp;&nbsp;&nbsp;&nbsp;- fleschKincaidGradeLevel</option>
+	
+	<option value="//api/name/fleschKincaidReadingEase">&nbsp;&nbsp;&nbsp;&nbsp;- fleschKincaidReadingEase</option>
+	
+	<option value="//api/name/gunningFogIndex">&nbsp;&nbsp;&nbsp;&nbsp;- gunningFogIndex</option>
+	
+	<option value="//api/name/letterCount">&nbsp;&nbsp;&nbsp;&nbsp;- letterCount</option>
+	
+	<option value="//api/name/percentageWordsWithThreeSyllablesWithProperNouns:">&nbsp;&nbsp;&nbsp;&nbsp;- percentageWordsWithThreeSyllablesWithProperNouns:</option>
+	
+	<option value="//api/name/sentenceCount">&nbsp;&nbsp;&nbsp;&nbsp;- sentenceCount</option>
+	
+	<option value="//api/name/smogIndex">&nbsp;&nbsp;&nbsp;&nbsp;- smogIndex</option>
+	
+	<option value="//api/name/syllableCount">&nbsp;&nbsp;&nbsp;&nbsp;- syllableCount</option>
+	
+	<option value="//api/name/syllableTotal">&nbsp;&nbsp;&nbsp;&nbsp;- syllableTotal</option>
+	
+	<option value="//api/name/wordCount">&nbsp;&nbsp;&nbsp;&nbsp;- wordCount</option>
+	
+	<option value="//api/name/wordsWithThreeSyllablesWithProperNouns:">&nbsp;&nbsp;&nbsp;&nbsp;- wordsWithThreeSyllablesWithProperNouns:</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Readability Tests">Readability Tests</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Counting">Counting</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Averages">Averages</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_Utilities">Utilities</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/automatedReadabilityIndex">automatedReadabilityIndex</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/averageSyllablesPerWord">averageSyllablesPerWord</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/averageWordsPerSentence">averageWordsPerSentence</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/cleanText">cleanText</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/colemanLiauIndex">colemanLiauIndex</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fleschKincaidGradeLevel">fleschKincaidGradeLevel</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/fleschKincaidReadingEase">fleschKincaidReadingEase</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/gunningFogIndex">gunningFogIndex</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/letterCount">letterCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/percentageWordsWithThreeSyllablesWithProperNouns:">percentageWordsWithThreeSyllablesWithProperNouns:</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/sentenceCount">sentenceCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/smogIndex">smogIndex</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/syllableCount">syllableCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/syllableTotal">syllableTotal</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wordCount">wordCount</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/wordsWithThreeSyllablesWithProperNouns:">wordsWithThreeSyllablesWithProperNouns:</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="NSString(RNTextStatistics) Category Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">NSString(RNTextStatistics) Category Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">NSString+RNTextStatistics.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="Readability Tests" name="task_Readability Tests"></a>
+						<h3 class="subsubtitle task-title">Readability Tests</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fleschKincaidReadingEase">&ndash;&nbsp;fleschKincaidReadingEase</a></code>
+		<span class="tooltip"><p>Get the Flesch Kincaid Reading Ease for a string of text.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/fleschKincaidGradeLevel">&ndash;&nbsp;fleschKincaidGradeLevel</a></code>
+		<span class="tooltip"><p>Get the Flesch Kincaid Grade Level for a string of text.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/gunningFogIndex">&ndash;&nbsp;gunningFogIndex</a></code>
+		<span class="tooltip"><p>Get the Gunning Fog Index for a string of text.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/colemanLiauIndex">&ndash;&nbsp;colemanLiauIndex</a></code>
+		<span class="tooltip"><p>Get the Coleman Liau Index for a string of text.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/smogIndex">&ndash;&nbsp;smogIndex</a></code>
+		<span class="tooltip"><p>Get the SMOG Index for a string of text.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/automatedReadabilityIndex">&ndash;&nbsp;automatedReadabilityIndex</a></code>
+		<span class="tooltip"><p>Get the Automated Readability Index for a string of text.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Counting" name="task_Counting"></a>
+						<h3 class="subsubtitle task-title">Counting</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/letterCount">&ndash;&nbsp;letterCount</a></code>
+		<span class="tooltip"><p>Get the total number of alphabetical characters in a string.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wordCount">&ndash;&nbsp;wordCount</a></code>
+		<span class="tooltip"><p>Get the total number of words in a string.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/sentenceCount">&ndash;&nbsp;sentenceCount</a></code>
+		<span class="tooltip"><p>Get the total number of sentences in a string.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/syllableCount">&ndash;&nbsp;syllableCount</a></code>
+		<span class="tooltip"><p>Get the total number of syllables in a word string.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/syllableTotal">&ndash;&nbsp;syllableTotal</a></code>
+		<span class="tooltip"><p>Get the total number of syllables in a string.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/wordsWithThreeSyllablesWithProperNouns:">&ndash;&nbsp;wordsWithThreeSyllablesWithProperNouns:</a></code>
+		<span class="tooltip"><p>Get the total number of words with at least 3 syllables in a string.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Averages" name="task_Averages"></a>
+						<h3 class="subsubtitle task-title">Averages</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/percentageWordsWithThreeSyllablesWithProperNouns:">&ndash;&nbsp;percentageWordsWithThreeSyllablesWithProperNouns:</a></code>
+		<span class="tooltip"><p>Get the percentage of words with at least 3 syllables in a string.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/averageSyllablesPerWord">&ndash;&nbsp;averageSyllablesPerWord</a></code>
+		<span class="tooltip"><p>Get the average number of syllables per word in a string.</p></span>
+	</span>
+	
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/averageWordsPerSentence">&ndash;&nbsp;averageWordsPerSentence</a></code>
+		<span class="tooltip"><p>Get the average number of words per sentence in a string</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+						
+						<a title="Utilities" name="task_Utilities"></a>
+						<h3 class="subsubtitle task-title">Utilities</h3>
+
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/cleanText">&ndash;&nbsp;cleanText</a></code>
+		<span class="tooltip"><p>Clean the text of non-alphanumeric characters, clean terminators, and remove newlines.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/automatedReadabilityIndex" title="automatedReadabilityIndex"></a>
+	<h3 class="subsubtitle method-title">automatedReadabilityIndex</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the Automated Readability Index for a string of text.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (float)automatedReadabilityIndex</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="http://en.wikipedia.org/wiki/Automated_Readability_Index">Automated Readability Index</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/averageSyllablesPerWord" title="averageSyllablesPerWord"></a>
+	<h3 class="subsubtitle method-title">averageSyllablesPerWord</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the average number of syllables per word in a string.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (float)averageSyllablesPerWord</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/averageWordsPerSentence" title="averageWordsPerSentence"></a>
+	<h3 class="subsubtitle method-title">averageWordsPerSentence</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the average number of words per sentence in a string</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (float)averageWordsPerSentence</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/cleanText" title="cleanText"></a>
+	<h3 class="subsubtitle method-title">cleanText</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Clean the text of non-alphanumeric characters, clean terminators, and remove newlines.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSString *)cleanText</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/colemanLiauIndex" title="colemanLiauIndex"></a>
+	<h3 class="subsubtitle method-title">colemanLiauIndex</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the Coleman Liau Index for a string of text.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (float)colemanLiauIndex</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="http://en.wikipedia.org/wiki/Coleman%E2%80%93Liau_index">Coleman Liau Index</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fleschKincaidGradeLevel" title="fleschKincaidGradeLevel"></a>
+	<h3 class="subsubtitle method-title">fleschKincaidGradeLevel</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the Flesch Kincaid Grade Level for a string of text.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (float)fleschKincaidGradeLevel</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="http://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_test">Flesch Kincaid Grade Level</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/fleschKincaidReadingEase" title="fleschKincaidReadingEase"></a>
+	<h3 class="subsubtitle method-title">fleschKincaidReadingEase</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the Flesch Kincaid Reading Ease for a string of text.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (float)fleschKincaidReadingEase</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="http://en.wikipedia.org/wiki/Flesch%E2%80%93Kincaid_readability_test">Flesch Kincaid Reading Ease</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/gunningFogIndex" title="gunningFogIndex"></a>
+	<h3 class="subsubtitle method-title">gunningFogIndex</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the Gunning Fog Index for a string of text.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (float)gunningFogIndex</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="http://en.wikipedia.org/wiki/Gunning_fog_index">Gunning Fog Index</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/letterCount" title="letterCount"></a>
+	<h3 class="subsubtitle method-title">letterCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the total number of alphabetical characters in a string.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSInteger)letterCount</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/percentageWordsWithThreeSyllablesWithProperNouns:" title="percentageWordsWithThreeSyllablesWithProperNouns:"></a>
+	<h3 class="subsubtitle method-title">percentageWordsWithThreeSyllablesWithProperNouns:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the percentage of words with at least 3 syllables in a string.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (float)percentageWordsWithThreeSyllablesWithProperNouns:(BOOL)<em>countProperNouns</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>countProperNouns</em></dt>
+			<dd><p>Decide if proper nouns should be counted as words</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/wordsWithThreeSyllablesWithProperNouns:">&ndash; wordsWithThreeSyllablesWithProperNouns:</a>
+Returned value is between 0 and 1.</p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/sentenceCount" title="sentenceCount"></a>
+	<h3 class="subsubtitle method-title">sentenceCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the total number of sentences in a string.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSInteger)sentenceCount</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/smogIndex" title="smogIndex"></a>
+	<h3 class="subsubtitle method-title">smogIndex</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the SMOG Index for a string of text.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (float)smogIndex</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="http://en.wikipedia.org/wiki/SMOG">SMOG Index</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/syllableCount" title="syllableCount"></a>
+	<h3 class="subsubtitle method-title">syllableCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the total number of syllables in a word string.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSInteger)syllableCount</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/syllableTotal">&ndash; syllableTotal</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/syllableTotal" title="syllableTotal"></a>
+	<h3 class="subsubtitle method-title">syllableTotal</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the total number of syllables in a string.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSInteger)syllableTotal</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/syllableCount">&ndash; syllableCount</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wordCount" title="wordCount"></a>
+	<h3 class="subsubtitle method-title">wordCount</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the total number of words in a string.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSInteger)wordCount</code></div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/wordsWithThreeSyllablesWithProperNouns:" title="wordsWithThreeSyllablesWithProperNouns:"></a>
+	<h3 class="subsubtitle method-title">wordsWithThreeSyllablesWithProperNouns:</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Get the total number of words with at least 3 syllables in a string.</p>
+	</div>		
+	
+	
+	<div class="method-subsection method-declaration"><code>- (NSInteger)wordsWithThreeSyllablesWithProperNouns:(BOOL)<em>countProperNouns</em></code></div>
+	
+	
+	<div class="method-subsection arguments-section parameters">
+		<h4 class="method-subtitle parameter-title">Parameters</h4>
+		
+		<dl class="argument-def parameter-def">
+			<dt><em>countProperNouns</em></dt>
+			<dd><p>Decide if proper nouns should be counted as words</p></dd>
+		</dl>
+		
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection see-also-section">
+		<h4 class="method-subtitle">See Also</h4>
+		<ul>
+			
+			<li><code><p><a href="#//api/name/percentageWordsWithThreeSyllablesWithProperNouns:">&ndash; percentageWordsWithThreeSyllablesWithProperNouns:</a></p></code></li>
+			
+		</ul>
+	</div>
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">NSString+RNTextStatistics.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2012 Ryan Nystrom. All rights reserved. (Last updated: 2012-11-19)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+		</script>
+	</body>
+</html>
