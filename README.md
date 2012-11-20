@@ -3,6 +3,8 @@ RNTextStatistics
 
 This project is an Objective-C port of Dave Child's awesome [Text-Statistics](https://github.com/DaveChild/Text-Statistics) project. More information about readability tests can be found [here](http://plainlanguage.com/newreadability.html).
 
+*There are apparently some errors with syllable counting. This is being looked into.*
+
 ## Installation ##
 
 Simply drag the RNTextStatistics folder into your project. Then import *only* the RNTextStatistics category on NSString into either individual files or your Prefix Header.
