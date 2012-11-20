@@ -33,7 +33,11 @@ float fleschEase = [raw fleschKincaidReadingEase];  // 49.48
 
 Super simple.
 
-### [Documentation](http://rnystrom.github.com/RNTextStatistics/index.html)
+### [Documentation](http://rnystrom.github.com/RNTextStatistics/index.html) ###
+
+## Unit Tests ##
+
+There is a small suite of unit tests included in the example. The tests are not exhaustive, only there to prove that existing functionality is unchanged after updates and pull requests. I will not accept any pull requests without adequate unit tests.
 
 ## Contact
 
