@@ -100,6 +100,11 @@ BOOL runTest(float result, float expected, float stddev) {
     for (NSString *string in twoSyllables) {
         STAssertTrue([string syllableCount] == 2, @"Double syllable word %@ incorrect",string);
     }
+    
+    NSArray *threeSyllables = @[@"poetry",@"delighting",@"falconry"];
+    for (NSString *string in threeSyllables) {
+        STAssertTrue([string syllableCount] == 3, @"Triple syllable word %@ incorrect",string);
+    }
 }
 
 - (void)testFleschEase {
