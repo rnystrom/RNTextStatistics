@@ -26,6 +26,7 @@
 #import "RNTextStatisticsTests.h"
 #import "NSString+RNTextStatistics.h"
 
+// default 3% standard deviation for readability tests
 static float kStddev = 0.03f;
 
 BOOL runTest(float result, float expected, float stddev) {
@@ -63,6 +64,10 @@ BOOL runTest(float result, float expected, float stddev) {
 }
 
 - (void)testSentenceCount {
+    NSString *empty = @"";
+    NSInteger emptyResult = [empty sentenceCount];
+    STAssertTrue(emptyResult == 0, @"Empty string sentence count of %i",emptyResult);
+    
     NSString *raw = @"Etiam porta sem malesuada magna mollis euismod. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean lacinia bibendum nulla sed consectetur.";
     NSInteger expected = 4;
     NSInteger result = [raw sentenceCount];
@@ -70,6 +75,10 @@ BOOL runTest(float result, float expected, float stddev) {
 }
 
 - (void)testWordCount {
+    NSString *empty = @"";
+    NSInteger emptyResult = [empty wordCount];
+    STAssertTrue(emptyResult == 0, @"Empty string word count of %i",emptyResult);
+    
     NSString *raw = @"Elit 111 Euismod  Lorem Cursus Pharetra";
     NSInteger expected = 5;
     NSInteger result = [raw wordCount];
@@ -77,6 +86,10 @@ BOOL runTest(float result, float expected, float stddev) {
 }
 
 - (void)testLetterCount {
+    NSString *empty = @"";
+    NSInteger emptyResult = [empty letterCount];
+    STAssertTrue(emptyResult == 0, @"Empty string letter count of %i",emptyResult);
+    
     NSString *raw = @"a sdfas dfasdf? 1111 asdfasdf asdf.";
     NSInteger expected = 24;
     NSInteger result = [raw letterCount];
@@ -84,6 +97,11 @@ BOOL runTest(float result, float expected, float stddev) {
 }
 
 - (void)testSyllableCount {
+    // empty string
+    NSString *empty = @"";
+    NSInteger result = [empty syllableCount];
+    STAssertTrue(result == 0, @"Empty string syllable count of %i",result);
+    
     // test preset words that don't follow rules
     NSArray *setWords = @[@"simile",@"forever"];
     for (NSString *word in setWords) {

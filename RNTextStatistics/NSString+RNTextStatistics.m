@@ -92,6 +92,10 @@
 #pragma mark - Counting
 
 - (NSInteger)letterCount {
+    if ([self isEqualToString:@""]) {
+        return 0;
+    }
+    
     NSString *cleanText = [self cleanText];
     NSString *strippedString = [cleanText stringByReplacingRegularExpression:@"[^a-zA-Z]+" withString:@"" options:NSRegularExpressionCaseInsensitive];
     NSInteger letterCount = [strippedString length];
@@ -99,6 +103,10 @@
 }
 
 - (NSInteger)wordCount {
+    if ([self isEqualToString:@""]) {
+        return 0;
+    }
+    
     NSString *cleanText = [self cleanText];
     NSString *strippedText = [cleanText stringByReplacingRegularExpression:@"[^\\s]" withString:@"" options:kNilOptions];
     NSInteger wordCount = 1 + [strippedText length];
@@ -106,6 +114,10 @@
 }
 
 - (NSInteger)sentenceCount {
+    if ([self isEqualToString:@""]) {
+        return 0;
+    }
+    
     NSString *cleanText = [self cleanText];
     NSString *strippedString = [cleanText stringByReplacingRegularExpression:@"[^\\.\\!\\?]+" withString:@"" options:NSRegularExpressionCaseInsensitive];
     NSInteger sentencesCount = MAX(1, [strippedString length]);
@@ -170,6 +182,10 @@
 }
 
 - (NSInteger)syllableCount {
+    if ([self isEqualToString:@""]) {
+        return 0;
+    }
+    
     // remove non-alpha chars
     NSString *strippedString = [self stringByReplacingRegularExpression:@"[^A-Za-z]" withString:@"" options:kNilOptions];
     // use lowercase for brevity w/ options + patterns
