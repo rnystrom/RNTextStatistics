@@ -109,7 +109,7 @@ BOOL runTest(float result, float expected, float stddev) {
     }
     STAssertTrue([@"shoreline" syllableCount], @"Syllable not counted properly.");
     
-    NSArray *oneSyllables = @[@"dog",@"cat",@"bird"];
+    NSArray *oneSyllables = @[@"dog",@"cat",@"bird",@"deal",@"deign"];
     for (NSString *string in oneSyllables) {
         STAssertTrue([string syllableCount] == 1, @"One syllable word %@ incorrect",string);
     }

@@ -196,6 +196,7 @@
     
     // special rules that don't follow syllable matching patterns
     NSDictionary *exceptions = @{
+    @"you" : @1,
     @"simile" : @3,
     @"forever" : @3,
     @"shoreline" : @2,
@@ -223,7 +224,7 @@
     @"rved?$",
     @"[aeiouy][dt]es?$",
     @"[aeiouy][^aeiouydt]e[rsd]?$",
-    //"^[dr]e[aeiou][^aeiou]+$" // Sorts out deal deign etc
+//    @"^[dr]e[aeiou][^aeiou]+$", // Sorts out deal deign etc
     @"[aeiouy]rse$",
     ];
     
