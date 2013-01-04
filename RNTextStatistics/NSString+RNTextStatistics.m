@@ -200,7 +200,7 @@
     @"simile" : @3,
     @"forever" : @3,
     @"shoreline" : @2,
-    @"poetry" : @3
+    @"poetry" : @3,
     @"wandered" : @3
     };
     // if one of the preceding words, return special case value
