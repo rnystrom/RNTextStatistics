@@ -5,7 +5,13 @@ This project is an Objective-C port of Dave Child's awesome [Text-Statistics](ht
 
 ## Installation ##
 
-Simply drag the RNTextStatistics folder into your project. Then import *only* the RNTextStatistics category on NSString into either individual files or your Prefix Header.
+The preferred method of installation is through [CocoaPods](http://cocoapods.org/). Just add the following to your Podfile:
+
+```
+pod 'RNTextStatistics', '~> 1.0.0'
+```
+
+Or if you want to install manually, simply drag the RNTextStatistics folder into your project. Then import *only* the RNTextStatistics category on NSString into either individual files or your Prefix Header.
 
 ``` objective-c
 #import "NSString+RNTextStatistics.h"
