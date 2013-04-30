@@ -66,7 +66,7 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 
 - (NSString*)cleanText {
     NSString *cleanString = objc_getAssociatedObject(self, kCleanString);
-    if (cleanString) return cleanString;
+    if (cleanString && ![[self class] isSubclassOfClass:[NSMutableString class]]) return cleanString;
     
     NSString *text = [self copy];
     // Strip tags
@@ -100,7 +100,7 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 
 - (NSInteger)letterCount {
     NSNumber *number = objc_getAssociatedObject(self, kLetterCount);
-    if (number) return [number integerValue];
+    if (number && ![self isKindOfClass:[NSMutableString class]]) return [number integerValue];
     
     if ([self isEqualToString:@""]) {
         return 0;
@@ -117,7 +117,7 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 
 - (NSInteger)wordCount {
     NSNumber *number = objc_getAssociatedObject(self, kWordCount);
-    if (number) return [number integerValue];
+    if (number && ![self isKindOfClass:[NSMutableString class]]) return [number integerValue];
 
     if ([self isEqualToString:@""]) {
         return 0;
@@ -134,7 +134,7 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 
 - (NSInteger)sentenceCount {
     NSNumber *number = objc_getAssociatedObject(self, kSentenceCount);
-    if (number) return [number integerValue];
+    if (number && ![self isKindOfClass:[NSMutableString class]]) return [number integerValue];
 
     if ([self isEqualToString:@""]) {
         return 0;
@@ -185,7 +185,7 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 
 - (float)averageSyllablesPerWord {
     NSNumber *number = objc_getAssociatedObject(self, kSyllablesPerWord);
-    if (number) return [number floatValue];
+    if (number && ![self isKindOfClass:[NSMutableString class]]) return [number floatValue];
     
     NSString *cleanText = [self cleanText];
     __block NSInteger syllableCount = 0;
