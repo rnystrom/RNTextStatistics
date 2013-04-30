@@ -26,6 +26,14 @@
 #import "NSString+RNTextStatistics.h"
 #import "NSRegularExpression+SimpleRegex.h"
 #import "NSString+RegexReplace.h"
+#import <objc/runtime.h>
+
+static void * const kCleanString = (void*)&kCleanString;
+static void * const kLetterCount = (void*)&kLetterCount;
+static void * const kWordCount = (void*)&kWordCount;
+static void * const kSentenceCount = (void*)&kSentenceCount;
+static void * const kSyllableCount = (void*)&kSyllableCount;
+static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 
 @implementation NSString (RNTextStatistics)
 
@@ -64,6 +72,9 @@
 #pragma mark - Formatting
 
 - (NSString*)cleanText {
+    NSString *cleanString = objc_getAssociatedObject(self, kCleanString);
+    if (cleanString) return cleanString;
+    
     NSString *text = [self copy];
     // Strip tags
     text = [[NSRegularExpression simpleRegex:@"<[^>]+>"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@""];
@@ -86,12 +97,18 @@
     // Remove multiple spaces
     text = [[NSRegularExpression simpleRegex:@"\\s+$"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@" "];
     text = [[NSRegularExpression simpleRegex:@"\\s+"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@" "];
+    
+    objc_setAssociatedObject(self, kCleanString, text, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
     return text;
 }
 
 #pragma mark - Counting
 
 - (NSInteger)letterCount {
+    NSNumber *number = objc_getAssociatedObject(self, kLetterCount);
+    if (number) return [number integerValue];
+    
     if ([self isEqualToString:@""]) {
         return 0;
     }
@@ -99,10 +116,16 @@
     NSString *cleanText = [self cleanText];
     NSString *strippedString = [cleanText stringByReplacingRegularExpression:@"[^a-zA-Z]+" withString:@"" options:NSRegularExpressionCaseInsensitive];
     NSInteger letterCount = [strippedString length];
+    
+    objc_setAssociatedObject(self, kLetterCount, [NSNumber numberWithInteger:letterCount], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
     return letterCount;
 }
 
 - (NSInteger)wordCount {
+    NSNumber *number = objc_getAssociatedObject(self, kWordCount);
+    if (number) return [number integerValue];
+
     if ([self isEqualToString:@""]) {
         return 0;
     }
@@ -110,10 +133,16 @@
     NSString *cleanText = [self cleanText];
     NSString *strippedText = [cleanText stringByReplacingRegularExpression:@"[^\\s]" withString:@"" options:kNilOptions];
     NSInteger wordCount = 1 + [strippedText length];
+    
+    objc_setAssociatedObject(self, kWordCount, [NSNumber numberWithInteger:wordCount], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
     return wordCount;
 }
 
 - (NSInteger)sentenceCount {
+    NSNumber *number = objc_getAssociatedObject(self, kSentenceCount);
+    if (number) return [number integerValue];
+
     if ([self isEqualToString:@""]) {
         return 0;
     }
@@ -121,6 +150,9 @@
     NSString *cleanText = [self cleanText];
     NSString *strippedString = [cleanText stringByReplacingRegularExpression:@"[^\\.\\!\\?]+" withString:@"" options:NSRegularExpressionCaseInsensitive];
     NSInteger sentencesCount = MAX(1, [strippedString length]);
+    
+    objc_setAssociatedObject(self, kSentenceCount, [NSNumber numberWithInteger:sentencesCount], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
     return sentencesCount;
 }
 
@@ -161,6 +193,9 @@
 }
 
 - (float)averageSyllablesPerWord {
+    NSNumber *number = objc_getAssociatedObject(self, kSyllablesPerWord);
+    if (number) return [number floatValue];
+    
     NSString *cleanText = [self cleanText];
     __block NSInteger syllableCount = 0;
     NSInteger wordCount = [cleanText wordCount];
@@ -168,7 +203,12 @@
     [words enumerateObjectsUsingBlock:^(NSString *word, NSUInteger idx, BOOL *stop) {
         syllableCount += [word syllableCount];
     }];
-    return (float)syllableCount / (float)wordCount;
+    
+    float syllablesPerWord = (float)syllableCount / (float)wordCount;
+    
+    objc_setAssociatedObject(self, kSyllablesPerWord, [NSNumber numberWithFloat:syllablesPerWord], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    return syllablesPerWord;
 }
 
 - (NSInteger)syllableTotal {
@@ -182,6 +222,9 @@
 }
 
 - (NSInteger)syllableCount {
+    NSNumber *number = objc_getAssociatedObject(self, kSyllableCount);
+    if (number) return [number integerValue];
+
     if ([self isEqualToString:@""]) {
         return 0;
     }
@@ -304,6 +347,8 @@
     }];
     
     syllableCount = syllableCount <= 0 ? 1 : syllableCount;
+    
+    objc_setAssociatedObject(self, kSyllableCount, [NSNumber numberWithInteger:syllableCount], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     return syllableCount;
 }
