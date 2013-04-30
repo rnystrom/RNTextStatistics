@@ -60,7 +60,7 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 }
 
 - (float)automatedReadabilityIndex {
-    return 4.71f * ([self letterCount] / (float)[self wordCount]) + 0.5f * ([cleanText wordCount] / (float)[self sentenceCount]) - 21.43f;
+    return 4.71f * ([self letterCount] / (float)[self wordCount]) + 0.5f * ([self wordCount] / (float)[self sentenceCount]) - 21.43f;
 }
 
 #pragma mark - Formatting
