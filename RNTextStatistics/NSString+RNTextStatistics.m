@@ -152,9 +152,8 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 
 // No test required. sentenceCount and wordCount are already tested
 - (float)averageWordsPerSentence {
-    NSString *cleanText = [self cleanText];
-    NSInteger sentenceCount = [cleanText sentenceCount];
-    NSInteger wordCount = [cleanText wordCount];
+    NSInteger sentenceCount = [self sentenceCount];
+    NSInteger wordCount = [self wordCount];
     return (float)wordCount / (float)sentenceCount;
 }
 
