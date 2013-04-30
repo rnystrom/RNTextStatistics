@@ -110,7 +110,7 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
     NSString *strippedString = [cleanText stringByReplacingRegularExpression:@"[^a-zA-Z]+" withString:@"" options:NSRegularExpressionCaseInsensitive];
     NSInteger letterCount = [strippedString length];
     
-    objc_setAssociatedObject(self, kLetterCount, [NSNumber numberWithInteger:letterCount], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kLetterCount, @(letterCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     return letterCount;
 }
@@ -127,7 +127,7 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
     NSString *strippedText = [cleanText stringByReplacingRegularExpression:@"[^\\s]" withString:@"" options:kNilOptions];
     NSInteger wordCount = 1 + [strippedText length];
     
-    objc_setAssociatedObject(self, kWordCount, [NSNumber numberWithInteger:wordCount], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kWordCount, @(wordCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     return wordCount;
 }
@@ -144,7 +144,7 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
     NSString *strippedString = [cleanText stringByReplacingRegularExpression:@"[^\\.\\!\\?]+" withString:@"" options:NSRegularExpressionCaseInsensitive];
     NSInteger sentencesCount = MAX(1, [strippedString length]);
     
-    objc_setAssociatedObject(self, kSentenceCount, [NSNumber numberWithInteger:sentencesCount], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kSentenceCount, @(sentencesCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     return sentencesCount;
 }
@@ -197,7 +197,7 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
     
     float syllablesPerWord = (float)syllableCount / (float)wordCount;
     
-    objc_setAssociatedObject(self, kSyllablesPerWord, [NSNumber numberWithFloat:syllablesPerWord], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    objc_setAssociatedObject(self, kSyllablesPerWord, @(syllablesPerWord), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
     
     return syllablesPerWord;
 }
