@@ -179,9 +179,8 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 }
 
 - (float)percentageWordsWithThreeSyllablesWithProperNouns:(BOOL)countProperNouns {
-    NSString *cleanText = [self cleanText];
-    NSInteger wordCount = [cleanText wordCount];
-    NSInteger longWordCount = [cleanText wordsWithThreeSyllablesWithProperNouns:countProperNouns];
+    NSInteger wordCount = [self wordCount];
+    NSInteger longWordCount = [self wordsWithThreeSyllablesWithProperNouns:countProperNouns];
     return (float)longWordCount / (float)wordCount;
 }
 
