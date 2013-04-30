@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
       LICENSE
   }
   s.author       = { "Ryan Nystrom" => "rnystrom [at] whoisryannystrom [dot] com" }
-  s.source       = { :git => "https://github.com/barrettj/RNTextStatistics.git", :tag => "1.0.0"} # should be changed to https://github.com/rnystrom/RNTextStatistics/
+  s.source       = { :git => "https://github.com/rnystrom/RNTextStatistics/", :tag => "1.0.0"}
   s.platform     = :ios, '5.0'
   s.source_files = 'RNTextStatistics/*'
   s.requires_arc = true
