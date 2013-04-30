@@ -32,7 +32,6 @@ static void * const kCleanString = (void*)&kCleanString;
 static void * const kLetterCount = (void*)&kLetterCount;
 static void * const kWordCount = (void*)&kWordCount;
 static void * const kSentenceCount = (void*)&kSentenceCount;
-static void * const kSyllableCount = (void*)&kSyllableCount;
 static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 
 @implementation NSString (RNTextStatistics)
@@ -214,12 +213,13 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 }
 
 - (NSInteger)syllableCount {
-    NSNumber *number = objc_getAssociatedObject(self, kSyllableCount);
-    if (number) return [number integerValue];
-
     if ([self isEqualToString:@""]) {
         return 0;
     }
+    
+    NSCache *saved = [NSString syllableCache];
+    NSNumber *number = [saved objectForKey:self];
+    if (number) return [number integerValue];
     
     // remove non-alpha chars
     NSString *strippedString = [self stringByReplacingRegularExpression:@"[^A-Za-z]" withString:@"" options:kNilOptions];
@@ -340,10 +340,19 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
     
     syllableCount = syllableCount <= 0 ? 1 : syllableCount;
     
-    objc_setAssociatedObject(self, kSyllableCount, [NSNumber numberWithInteger:syllableCount], OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    [saved setObject:@(syllableCount) forKey:self];
     
     return syllableCount;
 }
 
++ (NSCache*)syllableCache {
+    static dispatch_once_t pred;
+    static NSCache *shared = nil;
+    
+    dispatch_once(&pred, ^{
+        shared = [[NSCache alloc] init];
+    });
+    return shared;
+}
 
 @end
