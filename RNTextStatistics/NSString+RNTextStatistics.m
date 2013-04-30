@@ -40,33 +40,27 @@ static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 #pragma mark - Specific Tests
 
 - (float)fleschKincaidReadingEase {
-    NSString *cleanText = [self cleanText];
-    return 206.835f - 1.015f * [cleanText averageWordsPerSentence] - 84.6f * [cleanText averageSyllablesPerWord];
+    return 206.835f - 1.015f * [self averageWordsPerSentence] - 84.6f * [self averageSyllablesPerWord];
 }
 
 - (float)fleschKincaidGradeLevel {
-    NSString *cleanText = [self cleanText];
-    return 0.39f * [cleanText averageWordsPerSentence] + 11.8f * [cleanText averageSyllablesPerWord] - 15.59f;
+    return 0.39f * [self averageWordsPerSentence] + 11.8f * [self averageSyllablesPerWord] - 15.59f;
 }
 
 - (float)gunningFogIndex {
-    NSString *cleanText = [self cleanText];
-    return ([cleanText averageWordsPerSentence] + [cleanText percentageWordsWithThreeSyllablesWithProperNouns:YES] * 100.f) * 0.4f;
+    return ([self averageWordsPerSentence] + [self percentageWordsWithThreeSyllablesWithProperNouns:YES] * 100.f) * 0.4f;
 }
 
 - (float)colemanLiauIndex {
-    NSString *cleanText = [self cleanText];
-    return 5.89f * ([cleanText letterCount] / (float)[cleanText wordCount]) - 0.3f * ([cleanText sentenceCount] / (float)[cleanText wordCount]) - 15.8f;
+    return 5.89f * ([self letterCount] / (float)[self wordCount]) - 0.3f * ([self sentenceCount] / (float)[self wordCount]) - 15.8f;
 }
 
 - (float)smogIndex {
-    NSString *cleanText = [self cleanText];
-    return 1.043f * sqrtf([cleanText wordsWithThreeSyllablesWithProperNouns:YES] * (30.f / (float)[cleanText sentenceCount]) + 3.1291f);
+    return 1.043f * sqrtf([self wordsWithThreeSyllablesWithProperNouns:YES] * (30.f / (float)[self sentenceCount]) + 3.1291f);
 }
 
 - (float)automatedReadabilityIndex {
-    NSString *cleanText = [self cleanText];
-    return 4.71f * ([cleanText letterCount] / (float)[cleanText wordCount]) + 0.5f * ([cleanText wordCount] / (float)[cleanText sentenceCount]) - 21.43f;
+    return 4.71f * ([self letterCount] / (float)[self wordCount]) + 0.5f * ([cleanText wordCount] / (float)[self sentenceCount]) - 21.43f;
 }
 
 #pragma mark - Formatting
