@@ -47,7 +47,7 @@ There is a small suite of unit tests included in the example. The tests are not 
 
 ## Contact
 
-* [@nystrorm](https://twitter.com/nystrorm) on Twitter
+* [@nystrorm](https://twitter.com/_ryannystrom) on Twitter
 * [@rnystrom](https://github.com/rnystrom) on Github
 * <a href="mailTo:rnystrom@whoisryannystrom.com">rnystrom [at] whoisryannystrom [dot] com</a>
 
