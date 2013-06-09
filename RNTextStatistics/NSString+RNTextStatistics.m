@@ -26,44 +26,48 @@
 #import "NSString+RNTextStatistics.h"
 #import "NSRegularExpression+SimpleRegex.h"
 #import "NSString+RegexReplace.h"
+#import <objc/runtime.h>
+
+static void * const kCleanString = (void*)&kCleanString;
+static void * const kLetterCount = (void*)&kLetterCount;
+static void * const kWordCount = (void*)&kWordCount;
+static void * const kSentenceCount = (void*)&kSentenceCount;
+static void * const kSyllablesPerWord = (void*)&kSyllablesPerWord;
 
 @implementation NSString (RNTextStatistics)
 
 #pragma mark - Specific Tests
 
 - (float)fleschKincaidReadingEase {
-    NSString *cleanText = [self cleanText];
-    return 206.835f - 1.015f * [cleanText averageWordsPerSentence] - 84.6f * [cleanText averageSyllablesPerWord];
+    return 206.835f - 1.015f * [self averageWordsPerSentence] - 84.6f * [self averageSyllablesPerWord];
 }
 
 - (float)fleschKincaidGradeLevel {
-    NSString *cleanText = [self cleanText];
-    return 0.39f * [cleanText averageWordsPerSentence] + 11.8f * [cleanText averageSyllablesPerWord] - 15.59f;
+    return 0.39f * [self averageWordsPerSentence] + 11.8f * [self averageSyllablesPerWord] - 15.59f;
 }
 
 - (float)gunningFogIndex {
-    NSString *cleanText = [self cleanText];
-    return ([cleanText averageWordsPerSentence] + [cleanText percentageWordsWithThreeSyllablesWithProperNouns:YES] * 100.f) * 0.4f;
+    return ([self averageWordsPerSentence] + [self percentageWordsWithThreeSyllablesWithProperNouns:YES] * 100.f) * 0.4f;
 }
 
 - (float)colemanLiauIndex {
-    NSString *cleanText = [self cleanText];
-    return 5.89f * ([cleanText letterCount] / (float)[cleanText wordCount]) - 0.3f * ([cleanText sentenceCount] / (float)[cleanText wordCount]) - 15.8f;
+    return 5.89f * ([self letterCount] / (float)[self wordCount]) - 0.3f * ([self sentenceCount] / (float)[self wordCount]) - 15.8f;
 }
 
 - (float)smogIndex {
-    NSString *cleanText = [self cleanText];
-    return 1.043f * sqrtf([cleanText wordsWithThreeSyllablesWithProperNouns:YES] * (30.f / (float)[cleanText sentenceCount]) + 3.1291f);
+    return 1.043f * sqrtf([self wordsWithThreeSyllablesWithProperNouns:YES] * (30.f / (float)[self sentenceCount]) + 3.1291f);
 }
 
 - (float)automatedReadabilityIndex {
-    NSString *cleanText = [self cleanText];
-    return 4.71f * ([cleanText letterCount] / (float)[cleanText wordCount]) + 0.5f * ([cleanText wordCount] / (float)[cleanText sentenceCount]) - 21.43f;
+    return 4.71f * ([self letterCount] / (float)[self wordCount]) + 0.5f * ([self wordCount] / (float)[self sentenceCount]) - 21.43f;
 }
 
 #pragma mark - Formatting
 
 - (NSString*)cleanText {
+    NSString *cleanString = objc_getAssociatedObject(self, kCleanString);
+    if (cleanString && ![[self class] isSubclassOfClass:[NSMutableString class]]) return cleanString;
+    
     NSString *text = [self copy];
     // Strip tags
     text = [[NSRegularExpression simpleRegex:@"<[^>]+>"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@""];
@@ -86,12 +90,18 @@
     // Remove multiple spaces
     text = [[NSRegularExpression simpleRegex:@"\\s+$"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@" "];
     text = [[NSRegularExpression simpleRegex:@"\\s+"] stringByReplacingMatchesInString:text options:kNilOptions range:NSMakeRange(0, [text length]) withTemplate:@" "];
+    
+    objc_setAssociatedObject(self, kCleanString, text, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
     return text;
 }
 
 #pragma mark - Counting
 
 - (NSInteger)letterCount {
+    NSNumber *number = objc_getAssociatedObject(self, kLetterCount);
+    if (number && ![self isKindOfClass:[NSMutableString class]]) return [number integerValue];
+    
     if ([self isEqualToString:@""]) {
         return 0;
     }
@@ -99,10 +109,16 @@
     NSString *cleanText = [self cleanText];
     NSString *strippedString = [cleanText stringByReplacingRegularExpression:@"[^a-zA-Z]+" withString:@"" options:NSRegularExpressionCaseInsensitive];
     NSInteger letterCount = [strippedString length];
+    
+    objc_setAssociatedObject(self, kLetterCount, @(letterCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
     return letterCount;
 }
 
 - (NSInteger)wordCount {
+    NSNumber *number = objc_getAssociatedObject(self, kWordCount);
+    if (number && ![self isKindOfClass:[NSMutableString class]]) return [number integerValue];
+
     if ([self isEqualToString:@""]) {
         return 0;
     }
@@ -110,10 +126,16 @@
     NSString *cleanText = [self cleanText];
     NSString *strippedText = [cleanText stringByReplacingRegularExpression:@"[^\\s]" withString:@"" options:kNilOptions];
     NSInteger wordCount = 1 + [strippedText length];
+    
+    objc_setAssociatedObject(self, kWordCount, @(wordCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
     return wordCount;
 }
 
 - (NSInteger)sentenceCount {
+    NSNumber *number = objc_getAssociatedObject(self, kSentenceCount);
+    if (number && ![self isKindOfClass:[NSMutableString class]]) return [number integerValue];
+
     if ([self isEqualToString:@""]) {
         return 0;
     }
@@ -121,14 +143,16 @@
     NSString *cleanText = [self cleanText];
     NSString *strippedString = [cleanText stringByReplacingRegularExpression:@"[^\\.\\!\\?]+" withString:@"" options:NSRegularExpressionCaseInsensitive];
     NSInteger sentencesCount = MAX(1, [strippedString length]);
+    
+    objc_setAssociatedObject(self, kSentenceCount, @(sentencesCount), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
     return sentencesCount;
 }
 
 // No test required. sentenceCount and wordCount are already tested
 - (float)averageWordsPerSentence {
-    NSString *cleanText = [self cleanText];
-    NSInteger sentenceCount = [cleanText sentenceCount];
-    NSInteger wordCount = [cleanText wordCount];
+    NSInteger sentenceCount = [self sentenceCount];
+    NSInteger wordCount = [self wordCount];
     return (float)wordCount / (float)sentenceCount;
 }
 
@@ -154,13 +178,15 @@
 }
 
 - (float)percentageWordsWithThreeSyllablesWithProperNouns:(BOOL)countProperNouns {
-    NSString *cleanText = [self cleanText];
-    NSInteger wordCount = [cleanText wordCount];
-    NSInteger longWordCount = [cleanText wordsWithThreeSyllablesWithProperNouns:countProperNouns];
+    NSInteger wordCount = [self wordCount];
+    NSInteger longWordCount = [self wordsWithThreeSyllablesWithProperNouns:countProperNouns];
     return (float)longWordCount / (float)wordCount;
 }
 
 - (float)averageSyllablesPerWord {
+    NSNumber *number = objc_getAssociatedObject(self, kSyllablesPerWord);
+    if (number && ![self isKindOfClass:[NSMutableString class]]) return [number floatValue];
+    
     NSString *cleanText = [self cleanText];
     __block NSInteger syllableCount = 0;
     NSInteger wordCount = [cleanText wordCount];
@@ -168,7 +194,12 @@
     [words enumerateObjectsUsingBlock:^(NSString *word, NSUInteger idx, BOOL *stop) {
         syllableCount += [word syllableCount];
     }];
-    return (float)syllableCount / (float)wordCount;
+    
+    float syllablesPerWord = (float)syllableCount / (float)wordCount;
+    
+    objc_setAssociatedObject(self, kSyllablesPerWord, @(syllablesPerWord), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    return syllablesPerWord;
 }
 
 - (NSInteger)syllableTotal {
@@ -185,6 +216,10 @@
     if ([self isEqualToString:@""]) {
         return 0;
     }
+    
+    NSCache *saved = [NSString syllableCache];
+    NSNumber *number = [saved objectForKey:self];
+    if (number) return [number integerValue];
     
     // remove non-alpha chars
     NSString *strippedString = [self stringByReplacingRegularExpression:@"[^A-Za-z]" withString:@"" options:kNilOptions];
@@ -305,8 +340,19 @@
     
     syllableCount = syllableCount <= 0 ? 1 : syllableCount;
     
+    [saved setObject:@(syllableCount) forKey:self];
+    
     return syllableCount;
 }
 
++ (NSCache*)syllableCache {
+    static dispatch_once_t pred;
+    static NSCache *shared = nil;
+    
+    dispatch_once(&pred, ^{
+        shared = [[NSCache alloc] init];
+    });
+    return shared;
+}
 
 @end
